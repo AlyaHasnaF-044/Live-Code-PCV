@@ -1,28 +1,29 @@
-# import cv2
-# from matplotlib import pyplot as plt
+import cv2
+import matplotlib.pyplot as plt
 
-#TUGAS NO 1.
-#gambar = cv2.imread("foto alya.jpg")
+# # TUGAS NO 1
+# gambar = cv2.imread("img/foto alya.jpeg")
 
-# Cek apakah gambar berhasil dibaca
-#if gambar is None:
-#    print("Gambar tidak ditemukan!")
-#else:
-    #print("Gambar berhasil dibaca!")
+# # Cek apakah gambar berhasil dibaca
+# if gambar is None:
+#     print("Gambar tidak ditemukan!")
+# else:
+#     print("Gambar berhasil dibaca!")
 
-    # Menampilkan gambar
-    #cv2.imshow("Foto Saya", gambar)
+#     # Menampilkan gambar
+#     cv2.imshow("Foto Saya", gambar)
 
-    # Menunggu tombol ditekan
-   # cv2.waitKey(0)
+#     # Menunggu tombol ditekan
+#     cv2.waitKey(0)
 
-    # Menutup semua window OpenCV
-  #  cv2.destroyAllWindows()
+#     # Menutup semua window OpenCV
+#     cv2.destroyAllWindows()
 
-#TUGAS NO 2.
-# terang = cv2.imread("citra terang.jpg")
-# gelap = cv2.imread("citra gelap.jpg")
-# kontras = cv2.imread("kontras rendah.jpg")
+
+# # TUGAS NO 2.
+# terang = cv2.imread("img/citra terang.jpg")
+# gelap = cv2.imread("img/citra gelap.jpg")
+# kontras = cv2.imread("img/kontras rendah.jpg")
 
 # print("=== CITRA TERANG ===")
 # print("Shape     :", terang.shape)
@@ -45,7 +46,7 @@
 # print("Max       :", kontras.max())
 # print("Rata-rata :", kontras.mean())
 
-# gambar = cv2.imread("citra terang.jpg")
+# gambar = cv2.imread("img/citra terang.jpg")
 
 # # Ubah ke grayscale
 # gray = cv2.cvtColor(gambar, cv2.COLOR_BGR2GRAY)
@@ -73,56 +74,56 @@
 # print("Min:", terang.min())
 # print("Max:", terang.max())
 
-#BAGIAN IMAGE TUGAS DI KELAS
-# image = cv2.imread("citra terang.jpg")
-# [h,w,c] = image.shape
+# BAGIAN IMAGE TUGAS DI KELAS
+image = cv2.imread("img/citra terang.jpg")
+[h,w,c] = image.shape
 
-# for i in range(h):
-#     for j in range(w):
-#         image[i,j,0] = 0
-#         image[i,j,2] = 0
+for i in range(h):
+    for j in range(w):
+        image[i,j,0] = 0
+        image[i,j,2] = 0
 
 
-# cv2.imshow("image hijau", image)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows
-# cv2.waitKey(1)
+cv2.imshow("image hijau", image)
+cv2.waitKey(0)
+cv2.destroyAllWindows
+cv2.waitKey(1)
 
-# #BAGIAN VIDEO TUGAS DI KELAS
-# import cv2
+#BAGIAN VIDEO TUGAS DI KELAS
+import cv2
 
-# kamera = cv2.VideoCapture(0)
+kamera = cv2.VideoCapture(0)
 
-# while True:
-#     ret, image = kamera.read()
+while True:
+    ret, image = kamera.read()
 
-#     if ret == False:
-#         break
+    if ret == False:
+        break
 
-#     h, w, c = image.shape
+    h, w, c = image.shape
 
-#     i = 0
+    i = 0
 
-#     while i < h:
-#         j = 0
+    while i < h:
+        j = 0
 
-#         while j < w:
-#             image[i, j, 0] = 0
-#             image[i, j, 2] = 0
+        while j < w:
+            image[i, j, 0] = 0
+            image[i, j, 2] = 0
 
-#             j = j + 1
+            j = j + 1
 
-#         i = i + 1
+        i = i + 1
 
-#     cv2.imshow("Kamera Hijau", image)
+    cv2.imshow("Kamera Hijau", image)
 
-#     tombol = cv2.waitKey(1)
+    tombol = cv2.waitKey(1)
 
-#     if tombol == ord('q'):
-#         break
+    if tombol == ord('q'):
+        break
 
-# kamera.release()
-# cv2.destroyAllWindows()
+kamera.release()
+cv2.destroyAllWindows()
 
 
 

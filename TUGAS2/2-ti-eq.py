@@ -2,7 +2,7 @@ import math
 import cv2
 import numpy as np
 
-im = cv2.imread('logo_its.png', cv2.IMREAD_GRAYSCALE)
+im = cv2.imread('img/foto alya.jpeg', cv2.IMREAD_GRAYSCALE)
 r = np.arange(256, dtype=np.float64)
 
 lut_negatif = (255 - r)
@@ -99,5 +99,17 @@ hasil_gamma = gamma(im, 2.2)
 hasil_thresholding = thresholding(im, 128)
 hasil_ekualisasi = ekualisasi(im)
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Cek apakah gambar berhasil dibaca
+if im is None:
+    print("Gambar tidak ditemukan! Cek nama file dan folder img.")
+else:
+    # Menampilkan gambar asli dan hasil transformasi
+    cv2.imshow("Gambar Asli", im)
+    cv2.imshow("Transformasi Negatif", hasil_negatif)
+    cv2.imshow("Transformasi Logaritmik", hasil_logaritmik)
+    cv2.imshow("Transformasi Gamma", hasil_gamma)
+    cv2.imshow("Thresholding", hasil_thresholding)
+    cv2.imshow("Ekualisasi Histogram", hasil_ekualisasi)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
